@@ -1,23 +1,21 @@
 let numeroRandom;
+let formulario = document.getElementById("formularioNumeroMagico");
 function comenzar(){
     // Selecciona el objeto del boton de comenzar por id
     // agrega el atributo hidden para que se oculte una vez que se hizo click
-    let comenzarBtn = document.querySelector("#btnComenzar");
-    comenzarBtn.setAttribute("hidden", "true");
+    document.querySelector("#btnComenzar").setAttribute("hidden", "true");
     // Selecciona el objeto del article donde se encuentra el formulario para elegir el numero
     // le quita el atributo hidden para que se muestre el formulario que se encuentra en el article
-    let formulario = document.querySelector("article");
-    formulario.removeAttribute("hidden");
+    document.querySelector("article").removeAttribute("hidden");
     // genera un numero random entre el 1 y el 10
     numeroRandom = Math.trunc(Math.random()*(10 + 1 - 1) + 1);
-    console.log(numeroRandom);
+    //Agrego el evento del submit en el formulario
+    formulario.addEventListener("submit", adivinar);
     // llama a la funcion para hacer foco en el input donde pongo el numero
     inputFocus();
 }
 function adivinar(event){
-    // cuando se hace el preventDefault no valida el min y max del formulario
-    // Preguntar como hacer que valide en el formulario y despues haga el preventDefault
-    // hace preventDefault del input type submit.
+    // hace preventDefault del submit del formulario.
     event.preventDefault();
     // Obtiene el valor del numero que se ingreso en el input
     let numeroElegido = document.querySelector("#numero").value;

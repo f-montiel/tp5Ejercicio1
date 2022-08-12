@@ -21,10 +21,10 @@
             <p class="fs-5">Adivina el número del 1 al 10.</p>
             <button class="btn btn-outline-primary" id="btnComenzar" onclick="comenzar()">Comenzar</button>
             <article class="my-3" hidden>
-                <form class="form-group">
+                <form class="form-group" id="formularioNumeroMagico">
                     <label for="numero" class="form-label">Número elegido</label>
                     <input type="number" class="form-control" name="numero" id="numero"  required min="1" max="10" placeholder="Elije un número del 1 al 10">
-                    <input type="submit" class="btn btn-primary my-3" value="Adivinar" onclick="adivinar(event)">
+                    <button type="submit" class="btn btn-primary my-3">Adivinar</button>
                 </form>
             </article>
         </section>
